@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="hod">
 <head>
   <title>ThoughtWorksNYC | Home Office Day</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="candy.css">
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="PreloadCtrl">
 
 <%= yield %>
 
+<script type="text/javascript" src="/app/assets/javascripts/angular.js"></script>
+<script type="text/javascript" src="/app/assets/javascripts/angularApp.js"></script>
 </body>
 </html>

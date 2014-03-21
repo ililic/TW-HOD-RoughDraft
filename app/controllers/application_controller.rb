@@ -17,12 +17,12 @@ class ApplicationController < ActionController::Base
 
   def first_que_request
     sleep(2.0)
-    return {id:2, value:"potatoes", fruit_id:1 }
+    return {id:2, starch:"potatoes", fruit_id:1 }
   end
 
   def second_que_request
     sleep(4.0)
-    return [{ fruit_id:1, fruit_name:"apple"}, { fruit_id:1, fruit_name:"apple"}]
+    return [{ fruit_id:1, fruit_name:"apple"}, { fruit_id:2, fruit_name:"pear"}]
   end
 
   def third_que_request

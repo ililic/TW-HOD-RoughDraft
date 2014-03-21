@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="//showcase.thoughtworks.com/css/candy.css">
     
   </head>
-  <body ng-controller="PreloadCtrl">
-    <div ng-controller="FrontPageCtrl" ng-show="shown='FrontPage'">
+  <body>
+    <div>
         <div id="container">
         <div class="grid-wrapper">
           <div class="grid">
@@ -21,17 +21,25 @@
           <div class="grid">
             <div class="grid__cell">
               <p class="insights-article__date">March 21, 2014</p>
-              <h2 class="insights-article__title">Asynchronous Calls</h2>
+              <h2 class="insights-article__title">Promises....The $q service</h2>
               <p class="insights-article__author">
                 <ul id="promise"></ul>
               </p>
               <p class="insights-article__categories">
               </p>
+              <div ng-controller="FrontPageCtrl" ng-show="shown=='FrontPage'">
+                <div>What does the server tell me I'm having to eat?</div>
+                <div ng-show="doneQueing==true">
+                  Your meal will be {{meal.starch}} for a starch and {{meal.side}} for a side!
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <script type="text/javascript" src="/app/assets/javascripts/angular.js"></script>
-      <script type="text/javascript" src="/app/assets/javascripts/angularApp.js"></script>
+    </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.2/angular.min.js"></script>
+      <script type="text/javascript" src="angularApp.js"></script>
+      <script type="text/javascript" src="services.js"></script>
   </body>
 </html>
