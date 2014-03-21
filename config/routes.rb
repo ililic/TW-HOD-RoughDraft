@@ -8,6 +8,7 @@ HODPromise::Application.routes.draw do
   get 'que2', to: 'promises#que2'
   get 'que3', to: 'promises#que3'
   get 'defer', to: 'promises#defer'
+  get 'angular', to: 'promises#angularIndex'
 
   root 'welcome#index'
 
