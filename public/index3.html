@@ -42,11 +42,11 @@
             }
             else {
               response = JSON.parse(data);
-              data_services.forEach(function(data_service) { // CALL BACK - For each data service
-                data_service.do_work(data, function(result) { // CALL BACK - Do some work
+              data_services.forEach(function(data_service) { // CALLBACK: For each service
+                data_service.do_work(data, function(result) { // CALLBACK: Do some work
                   results.push(result);
                   if(results.length == data_services.length) {
-                    results.forEach(function(result) { // CALL BACK - Do some API calls when all work is done
+                    results.forEach(function(result) { // CALLBACK: Do some API calls
                       different_api_call(result, function(err, data) { // CALL BACK
                         if(err) {
                           return processErrorMessage(err);
