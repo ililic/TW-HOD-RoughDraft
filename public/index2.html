@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOD Promises!!</title>
+    <link rel="stylesheet" href="//showcase.thoughtworks.com/css/candy.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        function addPromise(promise) {
+          $('#promise').append('<li>' + promise.name + '</ul>');
+        }
+        $.getJSON('/one', function(promise) {
+          addPromise(promise);
+        });
+        $.getJSON('/two', function(promise) {
+          addPromise(promise);
+        });
+        $.getJSON('/three', function(promise) {
+          addPromise(promise);
+          $('#container').append("<a href='/index3.html'>This is amazing! I'm Going to do everything synchronously!</a>");
+        });
+      });
+    </script>
+  <body>
+    <div id="container">
+      <div class="new-york">
+        <p class="new-york__intro">What if I told you</p>
+        <h1 class="new-york__title">We could do this Asynchronously</h1>
+        <p class="new-york__subtitle">And render content as it becomes available...</p>
+        <ul id="promise"></ul>
+        <hr>
+      </div>
+    </div>
+  </body>
+</html>

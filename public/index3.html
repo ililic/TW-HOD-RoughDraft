@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Callback Hell</title>
+    <link rel="stylesheet" href="//showcase.thoughtworks.com/css/candy.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="new-york__subtitle">
+        <pre>
+          var queue = ...        // A job queue out in space
+
+          var data_services    = [analyticsService, mailerService, ..., anyOtherServices];
+          var service_results  = [];
+          var api_results      = [];
+
+          queue.poll('aQueue', function(err, data) {
+            if(err) {
+              return processErrorMessage(err);
+            }
+            else {
+              response = JSON.parse(data);
+              data_services.forEach(function(data_service) { // CALL BACK - For each data service
+                data_service.do_work(data, function(result) { // CALL BACK - Do some work
+                  results.push(result);
+                  if(results.length == data_services.length) {
+                    results.forEach(function(result) { // CALL BACK - Do some API calls when all work is done
+                      different_ap_call(result, function(err, data) { // CALL BACK
+                        if(err) {
+                          return processErrorMessage(err);
+                        } else {
+                          api_results.push(data);
+                          if(api_results.length == results.length) {
+                            queue.deleteMessage('aQueue', response.messageId);
+                          }
+                        }
+                      });
+                    });
+                  }
+                });
+              });
+            }
+          });
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>
