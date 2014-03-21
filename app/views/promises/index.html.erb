@@ -1,16 +1,38 @@
+<div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__cell">
+      <br/>
+      <p>NYC::HOD -- Angular JS Dark Magic</p>
+    </div>
+  </div>
+</div>
 
-<h1>Listing promises</h1>
+<div class="grid-wrapper insights-article insights-article--blue">
+  <div class="grid">
+    <div class="grid__cell">
+      <p class="insights-article__date">March 21, 2014</p>
+      <h2 class="insights-article__title">List of your HOD Promises:</h2>
+      <p class="insights-article__author">
+        <table>
+          <tbody>
+            <% @promises.each do |promise| %>
+              <tr>
+                <td><span class="insights-article__author-name"><%= promise.name %></span></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </p>
+      <p class="insights-article__categories">
+         <%= link_to "We can do better, can't we?", promises_path, id: "my-link", class: "insights-article__category "%>
+      </p>
+    </div>
+  </div>
+</div>
 
-<table>
-  <tbody>
-    <% @promises.each do |promise| %>
-      <tr>
-        <td><%= promise.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
-<a href="/index2.html">We must go asynchronous!</a>
+    
+      
 
+  
