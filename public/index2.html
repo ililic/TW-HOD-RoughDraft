@@ -6,8 +6,13 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
+        var count = 0;
         function addPromise(promise) {
           $('#promise').append('<li>' + promise.name + '</ul>');
+          count++;
+          if(count === 3) {
+            $('.insights-article__categories').append("<a href='/index3.html' class='insights-article__category'>This is amazing! I'm Going to do everything asynchronously!</a>");
+          }
         }
         $.getJSON('/one', function(promise) {
           addPromise(promise);
@@ -17,18 +22,31 @@
         });
         $.getJSON('/three', function(promise) {
           addPromise(promise);
-          $('#container').append("<a href='/index3.html'>This is amazing! I'm Going to do everything synchronously!</a>");
         });
       });
     </script>
   <body>
     <div id="container">
-      <div class="new-york">
-        <p class="new-york__intro">What if I told you</p>
-        <h1 class="new-york__title">We could do this Asynchronously</h1>
-        <p class="new-york__subtitle">And render content as it becomes available...</p>
-        <ul id="promise"></ul>
-        <hr>
+      <div class="grid-wrapper">
+        <div class="grid">
+          <div class="grid__cell">
+            <br/>
+            <p>NYC::HOD -- Angular JS Dark Magic</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-wrapper insights-article insights-article--blue">
+        <div class="grid">
+          <div class="grid__cell">
+            <p class="insights-article__date">March 21, 2014</p>
+            <h2 class="insights-article__title">Asynchronous Calls</h2>
+            <p class="insights-article__author">
+              <ul id="promise"></ul>
+            </p>
+            <p class="insights-article__categories">
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
