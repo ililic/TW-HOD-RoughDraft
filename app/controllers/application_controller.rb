@@ -2,17 +2,17 @@ class ApplicationController < ActionController::Base
 
   def some_long_synchronous_request
     sleep(10.0)
-    Promise.new(name: "Promises Rock!")
+    Promise.new(name: "It will be 13 degrees celius today.")
   end
 
   def another_long_synchronous_request
-    sleep(5.0)
-    Promise.new(name: "Promises Rule!!")
+    sleep(15.0)
+    Promise.new(name: "JavaScript is your friend.")
   end
 
   def a_third_synchronous_request
     sleep(2.0)
-    Promise.new(name: "Promises Wooo!!!!")
+    Promise.new(name: "At the end of this workshop you will be equipped with new tools in your Development Toolbelt.™")
   end
 
 end

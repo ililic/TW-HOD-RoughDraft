@@ -1,5 +1,4 @@
 // http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
-
 var ready;
 ready = function() {
 var Stopwatch = function(elem, options) {
@@ -81,7 +80,8 @@ var Stopwatch = function(elem, options) {
   $('#my-link').click(function (event) {
     var a = document.getElementById("basic");
     aTimer = new Stopwatch(a);
-    aTimer.start();    
+    aTimer.start();
+    $("#basic").append("<p>Please wait...fetching all your data...synchronously...so your users can't do anything until everything is ready...</p>")
   });
 
 };
