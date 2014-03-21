@@ -47,7 +47,7 @@
                   results.push(result);
                   if(results.length == data_services.length) {
                     results.forEach(function(result) { // CALL BACK - Do some API calls when all work is done
-                      different_ap_call(result, function(err, data) { // CALL BACK
+                      different_api_call(result, function(err, data) { // CALL BACK
                         if(err) {
                           return processErrorMessage(err);
                         } else {
