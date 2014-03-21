@@ -15,4 +15,23 @@ class ApplicationController < ActionController::Base
     Promise.new(name: "At the end of this workshop you will be equipped with new tools in your Development Toolbelt.™")
   end
 
+  def first_que_request
+    sleep(2.0)
+    return {id:2, value:"potatoes", fruit_id:1 }
+  end
+
+  def second_que_request
+    sleep(4.0)
+    return [{ fruit_id:1, fruit_name:"apple"}, { fruit_id:1, fruit_name:"apple"}]
+  end
+
+  def third_que_request
+    sleep(1.0)
+    return {some_field:"Hooray", another_field:"for", more_field:"$q"}
+  end
+
+  def defer_your_request
+    sleep(3.0)
+    return {message:"Your function is wrapped in a nice soft promise"}
+  end
 end

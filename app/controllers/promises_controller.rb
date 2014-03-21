@@ -18,4 +18,20 @@ class PromisesController < ApplicationController
     render json: a_third_synchronous_request
   end
 
+  def que1
+    render json: first_que_request
+  end
+
+  def que2
+    render json: second_que_request
+  end
+
+  def que3
+    render json: third_que_request
+  end
+
+  def defer
+    render json: defer_your_request
+  end
+
 end
