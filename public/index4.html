@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>ThoughtWorksNYC | Home Office Day</title>
-    <link rel="stylesheet" href="//showcase.thoughtworks.com/css/candy.css">
+    <link rel="stylesheet" href="candy.css">
   </head>
   <body>
     <div class="grid-wrapper insights-hero">
@@ -61,8 +61,8 @@
       <div class="grid grid--center">
         <div class="grid__cell">
           <pre>
-            var results = data_service.do_work(data).then(filterResults);
-            emailResults(results);
+            var resultsPromise = data_service.do_work(data).then(filterResults);
+            emailResults(resultsPromise);
           </pre>
         </div>
       </div>

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   def some_long_synchronous_request
     sleep(1.0)
-    Promise.new(name: "It will be 13 degrees celius today.")
+    Promise.new(name: "It will be 13 degrees celcius today.")
   end
 
   def another_long_synchronous_request
