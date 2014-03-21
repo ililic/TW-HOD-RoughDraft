@@ -50,11 +50,29 @@
       <div class="grid__cell unit-2-2--lap">
         <div class="side-quote">
           <p class="side-quote__quote">
-            This function should return a new promise that is fulfilled when the given fulfilledHandler or errorHandler callback is finished. <br/>
+            The function should return a new promise that is fulfilled when the given fulfilledHandler or errorHandler callback is finished. <br/>
             <strong>This allows promise operations to be chained together. </strong>
+            <pre>
+              asyncThing1().then(function() {
+                return asyncThing2();
+              }).then(function() {
+                return asyncThing3();
+              }).catch(function(err) {
+                return asyncRecovery1();
+              }).then(function() {
+                return asyncThing4();
+              }, function(err) {
+                return asyncRecovery2();
+              }).catch(function(err) {
+                console.log("Don't worry about it");
+              }).then(function() {
+                console.log("All done!");
+              });
+            </pre>
           </p>
         </div>
       </div>
+
       <div class="grid__cell unit-2-2--lap">
         <div class="side-quote">
           <p class="side-quote__quote">
@@ -64,6 +82,7 @@
           </p>
         </div>
       </div>
+
       <div class="grid__cell unit-2-2--lap">
         <div class="side-quote">
           <p class="side-quote__quote">
@@ -71,6 +90,17 @@
           </p>
         </div>
       </div>
+
+    <div class="grid-wrapper insights-article insights-article--blue">
+      <div class="grid">
+        <div class="grid__cell">
+          <p class="insights-article__categories">
+            <br/>
+            <a href="/angularIndex.html" class="insights-article__category">AngularJS Example.</a>
+          </p>
+        </div>
+      </div>
+      
     </div>
   </body>
 </html>

@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   end
 
   def another_long_synchronous_request
-    sleep(15.0)
+    sleep(10.0)
     Promise.new(name: "JavaScript is your friend.")
   end
 
   def a_third_synchronous_request
-    sleep(13.0)
+    sleep(5.0)
     Promise.new(name: "At the end of this workshop you will be equipped with new tools in your Development Toolbelt.™")
   end
 
