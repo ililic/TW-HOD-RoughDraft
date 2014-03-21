@@ -34,4 +34,8 @@ class PromisesController < ApplicationController
     render json: defer_your_request
   end
 
+  def angularIndex
+    test="blah"
+  end
+
 end
